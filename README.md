@@ -581,15 +581,24 @@ python3 decision_engine.py
 
 ## Screenshots
 
+### Enrichment Engine
+![Enrichment](Enrichment.png)
 
-- Pipeline run - 41 alerts processed, summary output
-- Honeytoken watcher - both triggers firing and escalating
-- AI triage comparison - three alert types side by side
-- Enrichment output - Tor exit node vs Google DNS
-- `svc_backup_admin` in Active Directory Users and Computers
-- `IT_Credentials` share and `credentials.txt`
-- Audit log - JSONL entries showing AUTO_CLOSE and ESCALATE records
+### AI Triage Comparison
+![AI Triage Comparison 1](AI%20Triage%20Comparison%201.png)
+![AI Triage Comparison 2](AI%20Triage%20Comparison%202.png)
 
+### Honeytoken Watcher
+![Honeytoken Watcher 1](Honeytoken%20Watcher%201.png)
+![Honeytoken Watcher 2](Honeytoken%20Watcher%202.png)
+
+### SOAR Pipeline
+![SOAR Pipeline 1](SOAR%20Pipeline%201.png)
+![SOAR Pipeline 2](SOAR%20Pipeline%202.png)
+
+### Audit Log
+![Audit Log 1](Audit%20Log%201.png)
+![Audit Log 2](Audit%20Log%202.png)
 ---
 
 ## Skills Demonstrated
