@@ -631,7 +631,7 @@ python3 decision_engine.py
 
 ## Relationship to Project 1
 
-This project extends the [AI Alert Triage project](https://github.com/DurgaRamireddy/AI-Powered-Alert-Triage-with-Claude-API) with a full SOAR pipeline wrapper. The core triage engine (`triage_engine.py`) was adapted into `ai_triage.py` with an updated schema and dual-input context. The original hallucination finding (AES-256 misidentified as RC4) remains documented in [`failure_analysis.md`](failure_analysis.md).
+This project extends the [AI Alert Triage project](https://github.com/DurgaRamireddy/AI-Powered-Alert-Triage-with-Claude-API) with a full SOAR pipeline wrapper. The core triage engine (`triage_engine.py`) was adapted into `ai_triage.py` with an updated schema and dual-input context. The original hallucination finding (AES-256 misidentified as RC4) remains documented in [`failure_analysis.md`](https://github.com/DurgaRamireddy/AI-Powered-Alert-Triage-with-Claude-API/blob/main/failure_analysis.md).
 
 **v2 (planned):** Replace `enrichment.py` with a Cortex custom analyzer that runs the same VirusTotal/AbuseIPDB logic inside the Cortex platform demonstrating the same enrichment logic operating in an industry-standard SOAR framework.
 
