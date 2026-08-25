@@ -440,7 +440,7 @@ The same Kerberoasting alert triaged twice - once without enrichment (private IP
 
 A honeytoken alert (no enrichment, internal IP) was run through AI triage without any special instruction. Result: "Requires Investigation" with 15% FP probability - hedging on something where the false positive rate is effectively zero by design.
 
-**Why it happened:** Claude read the `synthetic: true` metadata field we included for my own tracking purposes and used it to reduce its confidence. My internal bookkeeping field leaked into Claude's reasoning and made it less decisive.
+**Why it happened:** Claude read the `synthetic: true` metadata field I included for my own tracking purposes and used it to reduce its confidence. My internal bookkeeping field leaked into Claude's reasoning and made it less decisive.
 
 **Architectural response:** Rule 1 in the decision engine bypasses Claude's verdict entirely for honeytoken alerts. The rule doesn't ask "what did the AI think?" it asks "was this a honeytoken?" If yes, escalate immediately. This reflects real SOC practice: honeytokens route to IR, not analyst triage queues.
 
