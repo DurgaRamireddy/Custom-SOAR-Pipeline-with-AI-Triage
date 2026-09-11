@@ -447,6 +447,28 @@ A honeytoken alert (no enrichment, internal IP) was run through AI triage withou
 **Broader implication:** AI triage adds value on ambiguous signals where reasoning over incomplete data is the hard part. On unambiguous signals, a rule outperforms AI - faster, cheaper, and more decisive. The decision engine encodes this hierarchy explicitly rather than treating AI as the final word on everything.
 
 ---
+## Synthesis - When to Trust AI Confidence vs. When to Bypass It
+
+Combining findings from this project and the earlier triage engine, a clear
+pattern emerges: AI-reported confidence cannot be trusted as the signal for
+when to stop investigating or escalate.
+
+- **Fixed technical facts** - the model can invert a known mapping (AES vs.
+  RC4 encryption types) while stating high confidence. This is a factual
+  failure, not a reasoning-under-uncertainty one. (See the [earlier triage
+  engine's failure analysis](https://github.com/DurgaRamireddy/AI-Powered-Alert-Triage-with-Claude-API/blob/main/failure_analysis.md).)
+- **Definitionally certain cases** - honeytoken alerts have zero false-positive
+  rate by design, yet the model still hedged, picking up on irrelevant metadata
+  (a `synthetic: true` field) to lower its confidence.
+- **Genuinely ambiguous cases with relevant evidence** - enrichment data
+  (VirusTotal, AbuseIPDB) appropriately shifted the verdict from uncertain to
+  confident on the same alert. This is where AI reasoning adds real value.
+
+**Implication:** the architecture should treat model confidence as unreliable
+on its own. Useful only when reasoning over evidence explicitly supplied to
+it, and bypassed entirely via deterministic rules wherever the correct answer
+is knowable in advance.
+---
 
 ## AI Triage Comparison - Three Alert Types
 
